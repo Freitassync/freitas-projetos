@@ -1,0 +1,9 @@
+# Arquivo placeholder para o currículo
+
+Para adicionar seu currículo:
+1. Crie ou exporte seu currículo em PDF
+2. Renomeie o arquivo para "curriculo.pdf"
+3. Substitua este arquivo na pasta /public/
+4. O botão "Currículo" no menu superior fará o download automaticamente
+
+Ou você pode criar um link externo editando o arquivo src/app/Navbar.tsx
