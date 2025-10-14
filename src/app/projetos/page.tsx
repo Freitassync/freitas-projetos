@@ -11,25 +11,6 @@ export default function ProjetosPage() {
       github: "https://github.com/Freitassync/mindfit",
       admin: "https://mindfitadmin.outis.com.br/login",
       app: "https://mindfit.outis.com.br/login"
-    },
-    {
-      titulo: "Dashboard QlikSense - JBS",
-      descricao: "Desenvolvimento de dashboards analíticos para insights estratégicos e tomada de decisões.",
-      tags: ["QlikSense", "BI", "Análise de Dados"],
-      ano: "2024"
-    },
-    {
-      titulo: "Portal Pessoal",
-      descricao: "Portfólio online desenvolvido com Next.js, React e Tailwind CSS para apresentação profissional.",
-      tags: ["Next.js", "React", "Tailwind CSS"],
-      ano: "2025",
-      github: "https://github.com/Freitassync/freitas-projetos"
-    },
-    {
-      titulo: "Projeto Acadêmico FIAP",
-      descricao: "Projetos desenvolvidos durante a graduação em Sistemas de Informação, focados em inovação tecnológica.",
-      tags: ["SI", "Inovação", "Tecnologia"],
-      ano: "2024"
     }
   ];
 
