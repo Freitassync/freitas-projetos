@@ -56,7 +56,9 @@ export default function ProjetosPage() {
                 <a href={projeto.admin} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline mr-2">Painel Admin</a>
               )}
               {projeto.app && (
-                <a href={projeto.app} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline">App MindFit</a>
+                <a href={projeto.app} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline">
+                  {projeto.titulo === "MindFit" ? "App MindFit" : "Site AgroGest"}
+                </a>
               )}
             </div>
           ))}
