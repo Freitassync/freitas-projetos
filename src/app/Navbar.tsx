@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, FolderOpen, Mail, BookOpen, Download } from "lucide-react";
+import { Home, FolderOpen, Mail, BookOpen, Download, Award } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -16,6 +16,12 @@ export default function Navbar() {
             <Link href="/projetos" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
               <FolderOpen className="w-4 h-4" />
               Projetos
+            </Link>
+          </li>
+          <li>
+            <Link href="/certificados" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+              <Award className="w-4 h-4" />
+              Certificados
             </Link>
           </li>
           <li>
