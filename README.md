@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Gabriel Freitas - Portfólio Pessoal
 
-## Getting Started
+Portfólio profissional moderno e minimalista desenvolvido com Next.js, React e Tailwind CSS. Apresenta projetos, carreira, certificados e diplomas de forma clean e responsiva.
 
-First, run the development server:
+## 📋 Sobre o Projeto
 
+Este é meu portfólio pessoal, criado para apresentar minha trajetória profissional na área de Business Intelligence, projetos desenvolvidos e formações acadêmicas. O design minimalista em dark theme proporciona uma experiência elegante e profissional.
+
+## ✨ Funcionalidades
+
+- **Página Inicial**: Apresentação profissional com foto, descrição e links para redes sociais
+- **Projetos**: Showcase dos principais projetos desenvolvidos (MindFit, AgroGest)
+- **Carreira**: Timeline interativa mostrando evolução profissional
+- **Certificados**: Listagem de cursos e formações (Alura, FIAP)
+- **Diplomas**: Formações acadêmicas com imagens dos certificados
+- **Blog**: Estrutura preparada para artigos futuros
+- **Contato**: Formulário para contato direto
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Next.js 15.1** - Framework React para produção
+- **React 19** - Biblioteca JavaScript para interfaces
+- **Tailwind CSS 3.4** - Framework CSS utility-first
+- **TypeScript** - Superset JavaScript tipado
+- **Lucide React** - Biblioteca de ícones SVG
+- **Vercel** - Plataforma de deploy
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+
+- Node.js 18+ instalado
+- npm, yarn, pnpm ou bun
+
+### Instalação
+
+1. Clone o repositório:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Freitassync/freitas-projetos.git
+cd freitas-projetos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências:
+```bash
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Execute o servidor de desenvolvimento:
+```bash
+npm run dev
+# ou
+yarn dev
+# ou
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Abra [http://localhost:3000](http://localhost:3000) no navegador
 
-## Learn More
+## 📁 Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+```
+freitas-projetos/
+├── src/
+│   └── app/
+│       ├── blog/          # Página de blog
+│       ├── carreira/      # Timeline de carreira
+│       ├── certificados/  # Certificações e cursos
+│       ├── contato/       # Formulário de contato
+│       ├── diplomas/      # Diplomas acadêmicos
+│       ├── projetos/      # Portfólio de projetos
+│       ├── Navbar.tsx     # Componente de navegação
+│       ├── layout.tsx     # Layout global
+│       └── page.tsx       # Página inicial
+├── public/
+│   ├── logos/             # Logos dos projetos
+│   ├── diplomas/          # Imagens dos diplomas
+│   └── curriculo.pdf      # Currículo para download
+└── package.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O portfólio segue uma paleta minimalista:
+- **Preto** (#000000) - Background principal
+- **Branco** (#FFFFFF) - Cards e textos principais
+- **Cinza** (#4B5563, #9CA3AF) - Textos secundários
+- **Azul Escuro** (#1E3A8A, #3B82F6) - Destaques e CTAs
 
-## Deploy on Vercel
+## 📦 Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O projeto está configurado para deploy automático na Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Faça push para o repositório GitHub
+2. Conecte o repositório na Vercel
+3. Deploy automático a cada push na branch `main`
+
+Ou use o comando:
+```bash
+vercel --prod
+```
+
+## 📄 Licença
+
+Este projeto é de uso pessoal. Desenvolvido por Gabriel Freitas.
+
+## 👨‍💻 Autor
+
+**Gabriel Freitas**
+- LinkedIn: [Gabriel Freitas](https://www.linkedin.com/in/gabriel-freitas-075367172/)
+- GitHub: [@Freitassync](https://github.com/Freitassync)
+- Email: gabrielfreitas.ti99@gmail.com
+
+---
+
+Desenvolvido com ❤️ usando Next.js e Tailwind CSS

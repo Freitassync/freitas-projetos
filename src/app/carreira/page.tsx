@@ -4,7 +4,7 @@ export default function CarreiraPage() {
   const experiencias = [
     {
       cargo: "Business Intelligence Analyst Jr.",
-      empresa: "Friboi",
+      empresa: "JBS",
       localizacao: "São Paulo, Brazil",
       periodo: "Jun 2024 - Presente",
       duracao: "1 ano 5 meses",
@@ -85,11 +85,11 @@ export default function CarreiraPage() {
         {/* Estatísticas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 text-center">
-            <div className="text-4xl font-bold text-gray-900 mb-2">1.5+</div>
+            <div className="text-4xl font-bold text-gray-900 mb-2">2+</div>
             <div className="text-gray-600">Anos de Experiência</div>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 text-center">
-            <div className="text-4xl font-bold text-gray-900 mb-2">2</div>
+            <div className="text-4xl font-bold text-gray-900 mb-2">1</div>
             <div className="text-gray-600">Empresas</div>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 text-center">
