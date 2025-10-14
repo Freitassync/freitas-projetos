@@ -1,4 +1,5 @@
 import { Github, Calendar } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ProjetosPage() {
   const projetos = [
@@ -10,7 +11,8 @@ export default function ProjetosPage() {
       ano: "2025",
       github: "https://github.com/Freitassync/mindfit",
       admin: "https://mindfitadmin.outis.com.br/login",
-      app: "https://mindfit.outis.com.br/login"
+      app: "https://mindfit.outis.com.br/login",
+      logo: "/logos/logo_mindfit.png"
     },
     {
       titulo: "AgroGest",
@@ -19,7 +21,8 @@ export default function ProjetosPage() {
       tags: ["React Native", "Expo", "Node.js", "Express", "MongoDB", "JWT"],
       ano: "2025",
       github: "https://github.com/Freitassync/agrogest",
-      app: "https://agrogest.website"
+      app: "https://agrogest.website",
+      logo: "/logos/logo_agrogest.png"
     }
   ];
 
@@ -34,6 +37,17 @@ export default function ProjetosPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projetos.map((projeto, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
+              {projeto.logo && (
+                <div className="flex justify-center mb-4">
+                  <Image 
+                    src={projeto.logo} 
+                    alt={`${projeto.titulo} logo`} 
+                    width={80} 
+                    height={80} 
+                    className="object-contain"
+                  />
+                </div>
+              )}
               <div className="flex items-start justify-between mb-3">
                 <h2 className="text-xl font-semibold text-gray-900">{projeto.titulo}</h2>
                 {projeto.github && (
