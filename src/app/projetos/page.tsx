@@ -11,6 +11,15 @@ export default function ProjetosPage() {
       github: "https://github.com/Freitassync/mindfit",
       admin: "https://mindfitadmin.outis.com.br/login",
       app: "https://mindfit.outis.com.br/login"
+    },
+    {
+      titulo: "AgroGest",
+      descricao:
+        "AgroGest é uma solução completa para gestão agropecuária, composta por aplicativo mobile e API backend. Permite controle de fazendas, animais, usuários, processos e dados do agronegócio em um só lugar. App em React Native/Expo, backend Node.js/Express/MongoDB, autenticação JWT.",
+      tags: ["React Native", "Expo", "Node.js", "Express", "MongoDB", "JWT"],
+      ano: "2025",
+      github: "https://github.com/Freitassync/agrogest",
+      app: "https://agrogest.website"
     }
   ];
 
