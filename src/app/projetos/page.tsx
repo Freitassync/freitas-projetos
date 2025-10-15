@@ -29,14 +29,14 @@ export default function ProjetosPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black p-8">
+    <main className="min-h-screen bg-black p-4 sm:p-6 md:p-8">
       <div className="max-w-5xl mx-auto animate-fade-in">
-        <div className="mb-10">
-          <h1 className="text-4xl font-bold text-white mb-3">Projetos</h1>
-          <p className="text-lg text-gray-400">Uma seleção dos meus principais trabalhos e contribuições.</p>
+        <div className="mb-8 sm:mb-10">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Projetos</h1>
+          <p className="text-base sm:text-lg text-gray-400">Uma seleção dos meus principais trabalhos e contribuições.</p>
         </div>
         
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projetos.map((projeto, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 border border-gray-200 hover:shadow-xl hover:scale-105 transition-all duration-300">
               {projeto.logo && (

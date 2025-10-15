@@ -45,54 +45,54 @@ export default function MindFitPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black p-8">
+    <main className="min-h-screen bg-black p-4 sm:p-6 md:p-8">
       <div className="max-w-6xl mx-auto animate-fade-in">
-        <Link href="/projetos" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8">
-          <ArrowLeft className="w-5 h-5" />
+        <Link href="/projetos" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6 sm:mb-8">
+          <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           Voltar para Projetos
         </Link>
 
-        <div className="mb-10">
-          <div className="flex items-center gap-4 mb-4">
+        <div className="mb-8 sm:mb-10">
+          <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3 sm:gap-4 mb-4">
             <Image 
               src="/logos/logo_mindfit.png" 
               alt="MindFit logo" 
               width={60} 
               height={60} 
-              className="object-contain"
+              className="object-contain w-12 h-12 sm:w-16 sm:h-16"
             />
-            <h1 className="text-4xl font-bold text-white">MindFit</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white text-center sm:text-left">MindFit</h1>
           </div>
-          <p className="text-lg text-gray-400 mb-6">
+          <p className="text-base sm:text-lg text-gray-400 mb-6 text-center sm:text-left">
             Plataforma full-stack para academias e profissionais de saúde, com recursos de inteligência artificial para gestão de treinos, alunos e resultados.
           </p>
           
-          <div className="flex gap-4 mb-8">
+          <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center sm:justify-start">
             <a 
               href="https://github.com/Freitassync/mindfit" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-all text-sm sm:text-base"
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4 sm:w-5 sm:h-5" />
               GitHub
             </a>
             <a 
               href="https://mindfitadmin.outis.com.br/login" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all text-sm sm:text-base"
             >
-              <ExternalLink className="w-5 h-5" />
+              <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
               Painel Admin
             </a>
             <a 
               href="https://mindfit.outis.com.br/login" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+              className="flex items-center gap-2 px-3 sm:px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all text-sm sm:text-base"
             >
-              <ExternalLink className="w-5 h-5" />
+              <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
               App MindFit
             </a>
           </div>
@@ -102,7 +102,7 @@ export default function MindFitPage() {
         <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
           <div className="relative">
             {/* Imagem */}
-            <div className="relative h-[500px] bg-gray-100">
+            <div className="relative h-64 sm:h-96 md:h-[500px] bg-gray-100">
               <Image
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].title}
@@ -114,21 +114,21 @@ export default function MindFitPage() {
             {/* Botões de navegação */}
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all"
               aria-label="Slide anterior"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all"
               aria-label="Próximo slide"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Indicadores */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2">
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -143,22 +143,22 @@ export default function MindFitPage() {
           </div>
 
           {/* Descrição */}
-          <div className="p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+          <div className="p-4 sm:p-6 md:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
               {slides[currentSlide].title}
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
               {slides[currentSlide].description}
             </p>
           </div>
         </div>
 
         {/* Tecnologias */}
-        <div className="mt-10 bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Tecnologias Utilizadas</h2>
-          <div className="flex flex-wrap gap-3">
+        <div className="mt-8 sm:mt-10 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Tecnologias Utilizadas</h2>
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {['Spring Boot', 'Angular', 'React Native', 'MongoDB', 'OpenAI', 'USDA Food Database', 'IA'].map((tech, index) => (
-              <span key={index} className="px-4 py-2 bg-gray-900 text-white rounded-full font-medium">
+              <span key={index} className="px-3 sm:px-4 py-1 sm:py-2 bg-gray-900 text-white rounded-full font-medium text-xs sm:text-sm md:text-base">
                 {tech}
               </span>
             ))}
