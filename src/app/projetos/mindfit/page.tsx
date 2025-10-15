@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, ChevronLeft, ChevronRight, Github, ExternalLink, Maximize2, X } from 'lucide-react';
+import { SiSpringboot, SiAngular, SiReact, SiMongodb, SiOpenai } from 'react-icons/si';
+import { FaBrain, FaUtensils } from 'react-icons/fa';
 
 export default function MindFitPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -38,13 +40,13 @@ export default function MindFitPage() {
   ];
 
   const technologies = [
-    { name: 'Spring Boot', icon: '🍃', color: 'bg-green-100 text-green-800 border-green-300' },
-    { name: 'Angular', icon: '🅰️', color: 'bg-red-100 text-red-800 border-red-300' },
-    { name: 'React Native', icon: '⚛️', color: 'bg-blue-100 text-blue-800 border-blue-300' },
-    { name: 'MongoDB', icon: '🍃', color: 'bg-green-100 text-green-800 border-green-300' },
-    { name: 'OpenAI', icon: '🤖', color: 'bg-purple-100 text-purple-800 border-purple-300' },
-    { name: 'USDA Food DB', icon: '🥗', color: 'bg-yellow-100 text-yellow-800 border-yellow-300' },
-    { name: 'IA', icon: '🧠', color: 'bg-indigo-100 text-indigo-800 border-indigo-300' },
+    { name: 'Spring Boot', icon: <SiSpringboot className="w-6 h-6" />, color: 'bg-green-100 text-green-700 border-green-300' },
+    { name: 'Angular', icon: <SiAngular className="w-6 h-6" />, color: 'bg-red-100 text-red-700 border-red-300' },
+    { name: 'React Native', icon: <SiReact className="w-6 h-6" />, color: 'bg-blue-100 text-blue-700 border-blue-300' },
+    { name: 'MongoDB', icon: <SiMongodb className="w-6 h-6" />, color: 'bg-green-100 text-green-700 border-green-300' },
+    { name: 'OpenAI', icon: <SiOpenai className="w-6 h-6" />, color: 'bg-purple-100 text-purple-700 border-purple-300' },
+    { name: 'USDA Food DB', icon: <FaUtensils className="w-6 h-6" />, color: 'bg-yellow-100 text-yellow-700 border-yellow-300' },
+    { name: 'IA', icon: <FaBrain className="w-6 h-6" />, color: 'bg-indigo-100 text-indigo-700 border-indigo-300' },
   ];
 
   const nextSlide = () => {
@@ -195,7 +197,7 @@ export default function MindFitPage() {
                 key={index}
                 className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 ${tech.color} rounded-lg border-2 font-medium text-xs sm:text-sm md:text-base hover:scale-105 transition-transform shadow-sm`}
               >
-                <span className="text-xl sm:text-2xl">{tech.icon}</span>
+                {tech.icon}
                 <span className="font-semibold">{tech.name}</span>
               </div>
             ))}

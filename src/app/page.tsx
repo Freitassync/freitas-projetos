@@ -15,12 +15,6 @@ export default function Home() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            {/* Badge de disponibilidade */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full mb-8">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm text-green-400 font-medium">Disponível para novas oportunidades</span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
               Olá, eu sou <br />
               <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 text-transparent bg-clip-text">

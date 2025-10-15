@@ -1,18 +1,47 @@
 import { Github, Calendar, Eye, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { SiSpringboot, SiAngular, SiReact, SiMongodb, SiExpo, SiNodedotjs, SiExpress } from 'react-icons/si';
+import { FaBrain, FaLock } from 'react-icons/fa';
 
 export default function ProjetosPage() {
-  const techIcons: Record<string, string> = {
-    "Spring Boot": "🍃",
-    "Angular": "🅰️",
-    "React Native": "⚛️",
-    "MongoDB": "🍃",
-    "IA": "🧠",
-    "Expo": "📱",
-    "Node.js": "🟢",
-    "Express": "⚡",
-    "JWT": "🔐"
+  const techIcons: Record<string, { icon: React.ReactNode; color: string }> = {
+    "Spring Boot": { 
+      icon: <SiSpringboot className="w-5 h-5" />, 
+      color: "bg-green-100 text-green-700 border-green-300" 
+    },
+    "Angular": { 
+      icon: <SiAngular className="w-5 h-5" />, 
+      color: "bg-red-100 text-red-700 border-red-300" 
+    },
+    "React Native": { 
+      icon: <SiReact className="w-5 h-5" />, 
+      color: "bg-blue-100 text-blue-700 border-blue-300" 
+    },
+    "MongoDB": { 
+      icon: <SiMongodb className="w-5 h-5" />, 
+      color: "bg-green-100 text-green-700 border-green-300" 
+    },
+    "IA": { 
+      icon: <FaBrain className="w-5 h-5" />, 
+      color: "bg-purple-100 text-purple-700 border-purple-300" 
+    },
+    "Expo": { 
+      icon: <SiExpo className="w-5 h-5" />, 
+      color: "bg-slate-100 text-slate-700 border-slate-300" 
+    },
+    "Node.js": { 
+      icon: <SiNodedotjs className="w-5 h-5" />, 
+      color: "bg-green-100 text-green-700 border-green-300" 
+    },
+    "Express": { 
+      icon: <SiExpress className="w-5 h-5" />, 
+      color: "bg-gray-100 text-gray-700 border-gray-300" 
+    },
+    "JWT": { 
+      icon: <FaLock className="w-5 h-5" />, 
+      color: "bg-yellow-100 text-yellow-700 border-yellow-300" 
+    }
   };
 
   const projetos = [
@@ -103,15 +132,18 @@ export default function ProjetosPage() {
 
                 {/* Tags com ícones */}
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {projeto.tags.map((tag, i) => (
-                    <div 
-                      key={i} 
-                      className="flex items-center gap-1.5 px-3 py-1.5 bg-white/5 border border-gray-800 text-gray-300 rounded-lg font-medium text-xs sm:text-sm hover:bg-white/10 hover:border-gray-700 transition-all"
-                    >
-                      <span>{techIcons[tag] || "💻"}</span>
-                      <span>{tag}</span>
-                    </div>
-                  ))}
+                  {projeto.tags.map((tag, i) => {
+                    const techInfo = techIcons[tag] || { icon: <span>💻</span>, color: "bg-gray-100 text-gray-700 border-gray-300" };
+                    return (
+                      <div 
+                        key={i} 
+                        className={`flex items-center gap-1.5 px-3 py-1.5 ${techInfo.color} rounded-lg font-medium text-xs sm:text-sm border hover:scale-105 transition-all shadow-sm`}
+                      >
+                        {techInfo.icon}
+                        <span>{tag}</span>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 {/* Botões de ação */}
