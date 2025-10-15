@@ -1,4 +1,5 @@
 import { Briefcase, GraduationCap, Database, Linkedin, Github, Mail, ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -20,10 +21,13 @@ export default function Home() {
       {/* Apresentação detalhada */}
       <div className="bg-black rounded-lg shadow-2xl p-6 sm:p-8 md:p-10 max-w-4xl w-full border border-gray-800 animate-fade-in">
         <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 mb-8 sm:mb-10">
-          <img
+          <Image
             src="https://media.licdn.com/dms/image/v2/D4D03AQHNJBLnA1YSsQ/profile-displayphoto-shrink_400_400/B4DZd4_PzkGsAg-/0/1750081536330?e=1762992000&v=beta&t=IB_LPJMke-UTFjYE6Yh8PgumiHvbohyS3EvB2Zt5BqA"
             alt="Gabriel Freitas"
+            width={128}
+            height={128}
             className="w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-lg object-cover border-4 border-gray-700 hover:scale-105 transition-transform duration-300"
+            priority
           />
           <div className="text-center md:text-left">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Sobre mim</h2>
