@@ -1,5 +1,6 @@
-import { Github, Calendar } from 'lucide-react';
+import { Github, Calendar, Eye } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjetosPage() {
   const projetos = [
@@ -12,7 +13,8 @@ export default function ProjetosPage() {
       github: "https://github.com/Freitassync/mindfit",
       admin: "https://mindfitadmin.outis.com.br/login",
       app: "https://mindfit.outis.com.br/login",
-      logo: "/logos/logo_mindfit.png"
+      logo: "/logos/logo_mindfit.png",
+      detalhes: "/projetos/mindfit"
     },
     {
       titulo: "AgroGest",
@@ -66,14 +68,26 @@ export default function ProjetosPage() {
                 <Calendar className="w-4 h-4" />
                 <span>{projeto.ano}</span>
               </div>
-              {projeto.admin && (
-                <a href={projeto.admin} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline mr-2">Painel Admin</a>
+              
+              {projeto.detalhes && (
+                <Link href={projeto.detalhes} className="block mb-3">
+                  <button className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all font-medium">
+                    <Eye className="w-4 h-4" />
+                    Ver Detalhes
+                  </button>
+                </Link>
               )}
-              {projeto.app && (
-                <a href={projeto.app} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline">
-                  {projeto.titulo === "MindFit" ? "App MindFit" : "Site AgroGest"}
-                </a>
-              )}
+              
+              <div className="flex gap-2 flex-wrap">
+                {projeto.admin && (
+                  <a href={projeto.admin} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline">Painel Admin</a>
+                )}
+                {projeto.app && (
+                  <a href={projeto.app} target="_blank" rel="noopener" className="text-xs text-blue-700 hover:underline">
+                    {projeto.titulo === "MindFit" ? "App MindFit" : "Site AgroGest"}
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
