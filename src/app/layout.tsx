@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gabriel Freitas | Analista BI & Desenvolvedor",
   description: "Portfólio de Gabriel Freitas - Analista de Business Intelligence na JBS, cursando Sistemas de Informação na FIAP. Especializado em análise de dados, QlikSense e desenvolvimento web.",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

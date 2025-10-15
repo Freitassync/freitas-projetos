@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, Github, ExternalLink, Maximize2, X } from 'lucide-react';
 
 export default function MindFitPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const slides = [
     {
@@ -36,12 +37,32 @@ export default function MindFitPage() {
     }
   ];
 
+  const technologies = [
+    { name: 'Spring Boot', icon: '🍃', color: 'bg-green-100 text-green-800 border-green-300' },
+    { name: 'Angular', icon: '🅰️', color: 'bg-red-100 text-red-800 border-red-300' },
+    { name: 'React Native', icon: '⚛️', color: 'bg-blue-100 text-blue-800 border-blue-300' },
+    { name: 'MongoDB', icon: '🍃', color: 'bg-green-100 text-green-800 border-green-300' },
+    { name: 'OpenAI', icon: '🤖', color: 'bg-purple-100 text-purple-800 border-purple-300' },
+    { name: 'USDA Food DB', icon: '🥗', color: 'bg-yellow-100 text-yellow-800 border-yellow-300' },
+    { name: 'IA', icon: '🧠', color: 'bg-indigo-100 text-indigo-800 border-indigo-300' },
+  ];
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset';
   };
 
   return (
@@ -102,33 +123,45 @@ export default function MindFitPage() {
         <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
           <div className="relative">
             {/* Imagem */}
-            <div className="relative h-64 sm:h-96 md:h-[500px] bg-gray-100">
+            <div className="relative h-64 sm:h-96 md:h-[500px] bg-gray-100 cursor-pointer group" onClick={openModal}>
               <Image
                 src={slides[currentSlide].image}
                 alt={slides[currentSlide].title}
                 fill
                 className="object-contain"
               />
+              
+              {/* Botão de maximizar */}
+              <button
+                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all opacity-0 group-hover:opacity-100"
+                aria-label="Maximizar imagem"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openModal();
+                }}
+              >
+                <Maximize2 className="w-5 h-5" />
+              </button>
             </div>
 
             {/* Botões de navegação */}
             <button
               onClick={prevSlide}
-              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all"
+              className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all z-10"
               aria-label="Slide anterior"
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all"
+              className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 sm:p-3 rounded-full transition-all z-10"
               aria-label="Próximo slide"
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Indicadores */}
-            <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2">
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2 z-10">
               {slides.map((_, index) => (
                 <button
                   key={index}
@@ -155,16 +188,74 @@ export default function MindFitPage() {
 
         {/* Tecnologias */}
         <div className="mt-8 sm:mt-10 bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Tecnologias Utilizadas</h2>
-          <div className="flex flex-wrap gap-2 sm:gap-3">
-            {['Spring Boot', 'Angular', 'React Native', 'MongoDB', 'OpenAI', 'USDA Food Database', 'IA'].map((tech, index) => (
-              <span key={index} className="px-3 sm:px-4 py-1 sm:py-2 bg-gray-900 text-white rounded-full font-medium text-xs sm:text-sm md:text-base">
-                {tech}
-              </span>
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">Tecnologias Utilizadas</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+            {technologies.map((tech, index) => (
+              <div
+                key={index}
+                className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 ${tech.color} rounded-lg border-2 font-medium text-xs sm:text-sm md:text-base hover:scale-105 transition-transform shadow-sm`}
+              >
+                <span className="text-xl sm:text-2xl">{tech.icon}</span>
+                <span className="font-semibold">{tech.name}</span>
+              </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Modal de Maximização */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 animate-fade-in" onClick={closeModal}>
+          <button
+            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all"
+            onClick={closeModal}
+            aria-label="Fechar modal"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              fill
+              className="object-contain"
+            />
+
+            {/* Navegação no modal */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                prevSlide();
+              }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all"
+              aria-label="Slide anterior"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextSlide();
+              }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-3 rounded-full transition-all"
+              aria-label="Próximo slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+
+            {/* Título e descrição no modal */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 sm:p-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                {slides[currentSlide].title}
+              </h2>
+              <p className="text-sm sm:text-base text-gray-300 max-w-4xl">
+                {slides[currentSlide].description}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
